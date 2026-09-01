@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // Use a debug build for F5 because release optimization can eliminate breakpoints.
+      // Build distribution artifacts from the terminal with `make app` (release by default).
+      "label": "build app",
+      "type": "shell",
+      "command": "make app CONFIG=debug",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$swiftc"],
+      "presentation": { "reveal": "silent", "clear": true }
+    },
+    {
+      "label": "build spike",
+      "type": "shell",
+      "command": "swift build --product spike",
+      "problemMatcher": ["$swiftc"],
+      "presentation": { "reveal": "silent", "clear": true }
+    },
+    {
+      "label": "self-test",
+      "type": "shell",
+      "command": "make spike ARGS=--test",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": ["$swiftc"]
+    }
+  ]
+}

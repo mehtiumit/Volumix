@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>Volumix</string>
+	<key>CFBundleDisplayName</key>
+	<string>Volumix</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.volumix.app</string>
+	<key>CFBundleExecutable</key>
+	<string>Volumix</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>14.4</string>
+	<!-- No Dock icon; the application lives in the menu bar. -->
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSAudioCaptureUsageDescription</key>
+	<string>Volumix accesses system audio to control each application's volume independently. Audio is never recorded or transmitted.</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+</dict>
+</plist>

@@ -1,0 +1,7 @@
+.DS_Store
+/.build/
+/Volumix.app/
+/graphify-out/
+*.dSYM
+*.xcuserstate
+DerivedData/

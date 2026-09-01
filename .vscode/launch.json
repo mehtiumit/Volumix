@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Run the binary *inside* the application bundle. TCC audio permission and Info.plist values
+      // such as LSUIElement and permission copy are tied to bundle identity. Launching the bare
+      // binary from .build would show a Dock icon and disrupt the permission flow.
+      "name": "Volumix",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/Volumix.app/Contents/MacOS/Volumix",
+      "cwd": "${workspaceFolder}",
+      "env": { "VOLUMIX_DEBUG": "1" },
+      "preLaunchTask": "build app",
+      "terminal": "console"
+    },
+    {
+      // Measure the audio graph without the application UI. Empty arguments list processes,
+      // "--test" runs mixer checks, and "Spotify 0.3 15" applies 30% gain for 15 seconds.
+      "name": "spike",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/.build/arm64-apple-macosx/debug/spike",
+      "args": ["--test"],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build spike",
+      "terminal": "console"
+    }
+  ]
+}
